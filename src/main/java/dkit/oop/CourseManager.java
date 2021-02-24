@@ -75,6 +75,10 @@ public class CourseManager {
         return c;
     }
 
+    public void writeToFile()
+    {
+
+    }
     // editCourse(courseId);       // not required for this iteration
 
 }
