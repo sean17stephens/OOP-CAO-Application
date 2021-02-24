@@ -3,7 +3,7 @@ package dkit.oop;
 public class Course {
 
     private String courseId;   // e.g. DK821
-    private String level;      // e.g. 7, 8, 9, 10
+    private Integer level;      // e.g. 7, 8, 9, 10
     private String title;      // e.g. BSc in Computing in Software Development
     private String institution; // Dundalk Institute of Technology
 
@@ -15,11 +15,18 @@ public class Course {
 
 
     // Constructor
-    public Course(String courseId, String level,String title, String institution) {
+    public Course(String courseId, Integer level,String title, String institution) {
         this.courseId = courseId;
         this.level = level;
         this.title = title;
         this.institution = institution;
+    }
+
+    public Course(Course course) {
+        this.courseId = course.courseId;
+        this.level = course.level;
+        this.title = course.title;
+        this.institution = course.institution;
     }
 
 
@@ -30,10 +37,10 @@ public class Course {
     public void setCourseId(String courseId) {
         this.courseId = courseId;
     }
-    public String getLevel() {
+    public Integer getLevel() {
         return level;
     }
-    public void setLevel(String level) {
+    public void setLevel(Integer level) {
         this.level = level;
     }
     public String getInstitution() {
