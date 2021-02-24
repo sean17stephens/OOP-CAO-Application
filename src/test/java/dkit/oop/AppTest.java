@@ -22,7 +22,7 @@ public class AppTest
     {
         Student s1 = new Student(1234567,"20-04-12","asdfhe", "sean@shejd.com");
 
-        Student s2 = new Student(s1);
+        Student s2 = new Student(s1); //clone
 
         assert (s1 != s2);
 
@@ -31,5 +31,6 @@ public class AppTest
         s2.setCaoNumber(6475838);
 
         assert(!s1.equals(s2));
+
     }
 }
