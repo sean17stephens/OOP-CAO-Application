@@ -21,7 +21,7 @@ public class StudentManager{
         // later, load from text file "students.dat" and populate studentsMap
     }
 
-    public Student getStudent(String caonumber)
+    public Student getStudent(Integer caonumber)
     {
         Student s = studentsMap.get(caonumber);
         if(s!=null)

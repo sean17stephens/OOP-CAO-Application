@@ -1,5 +1,6 @@
 package dkit.oop;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -31,6 +32,20 @@ public class App
         // so we 'inject' or pass-in these objects.
         //
         CourseChoicesManager mgr = new CourseChoicesManager(studentManager, courseManager);
+
+        //STORING CHOICES FOR STUDENT
+        ArrayList<String> list = new ArrayList<>();
+        list.add("DK821");
+        list.add("DN150");
+        list.add("TUD350");
+        //add/update students choices
+        mgr.updateChoices(1234567, list);
+        //get the students current choices
+        List<String> currentChoicesList = mgr.getStudentChoices(1234567);
+        //display the students choice. iterate over currentChoicesList
+        // mgr.getCourseDetails();
+
+
 
         // display a menu to do things
         // manual testing of mgr public interface

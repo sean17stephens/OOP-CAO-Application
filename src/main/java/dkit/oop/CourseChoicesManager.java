@@ -31,23 +31,30 @@ public class CourseChoicesManager {
     // This is called "Dependency Injection", meaning that we
     // inject (or pass in) objects that this class requires to do its job.
     //
+    HashMap<Integer,List<String>> selectedChoices = new HashMap<>();
+    HashMap<Integer,List<String>> courseDetails = new HashMap<>();
+
     CourseChoicesManager(StudentManager studentManager, CourseManager courseManager) {
         this.studentManager = studentManager;
         this.courseManager = courseManager;
-
+        List<Course> courseList = this.courseManager.getAllCourses();
+        Student studentsMap = this.studentManager.getStudent(1234567);
     }
 
 //    public Student getStudentDetails() {
 //    }
 //
-//    public getCourseDetails() {
-//    }
+      public List<String> getCourseDetails(String courseID) {
+        return courseDetails.get(courseID);
+      }
 //
-//    public  getStudentChoices() {
-//    }
-//
-//    void updateChoices() {
-//    }
+      public List<String> getStudentChoices(int caoNumber) {
+        return selectedChoices.get(caoNumber);
+      }
+
+      void updateChoices(int caoNumber, List<String> choices) {
+        selectedChoices.put(caoNumber, choices);
+      }
 //
 //    public  getAllCourses() {
 //    }
