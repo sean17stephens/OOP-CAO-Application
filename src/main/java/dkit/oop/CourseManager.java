@@ -64,6 +64,7 @@ public class CourseManager {
         if (course ==null)
             throw new IllegalArgumentException();
         this.courseMap.put(course.getCourseId(), new Course (course));
+        writeToCourseFile();
     }
 
     public Course removeCourse(Integer courseID)
@@ -86,7 +87,7 @@ public class CourseManager {
                 input = courseFile.nextLine();
                 String[] data = input.split(",");
                 String courseID = data[0];
-                String level = data[1];
+                Integer level = Integer.parseInt(data[1]);
                 String title = data[2];
                 String institution = data[3];
 
@@ -110,6 +111,9 @@ public class CourseManager {
             e.printStackTrace();
         }
     }
+
+
+
     // editCourse(courseId);       // not required for this iteration
 
 }

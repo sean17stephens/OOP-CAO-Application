@@ -60,12 +60,12 @@ public class StudentManager{
             {
                 input = studentFile.nextLine();
                 String[] data = input.split(",");
-                String caoNumber = data[0];
+                Integer caoNumber = Integer.parseInt(data[0]);
                 String dateOfBirth = data[1];
                 String password = data[2];
                 String email = data[3];
 
-                Student readInStudent = new Course( caoNumber, dateOfBirth, password, email);
+                Student readInStudent = new Student( caoNumber, dateOfBirth, password, email);
                 this.studentList.add(readInStudent);
             }
         } catch (FileNotFoundException e){

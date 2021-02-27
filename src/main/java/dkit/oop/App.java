@@ -2,6 +2,7 @@ package dkit.oop;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  *
@@ -11,6 +12,9 @@ import java.util.List;
  */
 public class App 
 {
+    private static Scanner sc = new Scanner(System.in);
+
+
     public static void main( String[] args )
     {
         System.out.println( "CAO Online - CA4" );
@@ -50,6 +54,9 @@ public class App
         // display a menu to do things
         // manual testing of mgr public interface
 
+        menu();
+
+
 //        if ( mgr.login(22224444, "xxxx","bbbb") )
 //        {
 //            Student student = mgr.getStudentDetails(22224444);
@@ -61,6 +68,45 @@ public class App
 
 
         //mgr.saveToFile();
+
+    }
+
+    public static void menu(){
+
+        while(true){
+            //show options
+            System.out.println("0. Exit");
+            System.out.println("1. Get a Student Using Cao Numnber");
+            System.out.println("2. User");
+
+            String input = sc.nextLine();
+
+            try{
+                int inp = Integer.parseInt(input);
+
+                switch( inp ){
+                    case 0:
+                        System.exit(0);
+                        break;
+                    case 1:
+                        StudentManager.getStudent();
+                        break;
+                    case 2:
+                        menuUser();
+                        break;
+                    default:
+                        System.out.println("Not a valid option");
+                        System.out.println("Please try again...");
+
+                }
+
+
+            }catch(NumberFormatException e){
+                System.out.println("Not a Number");
+                System.out.println("Please try again...");
+            }
+        }
+
 
     }
 }
