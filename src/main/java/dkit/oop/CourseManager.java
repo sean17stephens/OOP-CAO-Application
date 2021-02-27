@@ -1,6 +1,7 @@
 package dkit.oop;
 
 
+import java.io.*;
 import java.util.*;
 
 /**
@@ -75,9 +76,39 @@ public class CourseManager {
         return c;
     }
 
-    public void writeToFile()
+    public void loadCoursesFromFile()
     {
+        try(Scanner courseFile = new Scanner(new BufferedReader(new FileReader("courses.txt"))))
+        {
+            String input;
+            while(courseFile.hasNextLine())
+            {
+                input = courseFile.nextLine();
+                String[] data = input.split(",");
+                String courseID = data[0];
+                String level = data[1];
+                String title = data[2];
+                String institution = data[3];
 
+                Course readInCourse = new Course( courseID, level, title, institution);
+                this.courseList.add(readInCourse);
+            }
+        } catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void writeToCourseFile()
+    {
+        try(BufferedWriter courseFile = new BufferedWriter(new FileWriter("courses.txt")))
+        {
+            for(Course course : courseList)
+            {
+                courseFile.write(course.getCourseId() + ", " + course.getLevel() + ", " + course.getTitle() + ", " + course.getInstitution());
+            }
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
     // editCourse(courseId);       // not required for this iteration
 

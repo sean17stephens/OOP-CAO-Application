@@ -4,12 +4,16 @@ package dkit.oop;
 
 
 import java.awt.*;
+import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class StudentManager{
 
     private Map<Integer,Student> studentsMap;
+    private ArrayList<Student> studentList;
     // Store all students in data structure
 
     public StudentManager() {
@@ -47,9 +51,39 @@ public class StudentManager{
         return s;
     }
 
-    public void writeToFile()
+    public void loadStudentsFromFile()
     {
+        try(Scanner studentFile = new Scanner(new BufferedReader(new FileReader("students.txt"))))
+        {
+            String input;
+            while(studentFile.hasNextLine())
+            {
+                input = studentFile.nextLine();
+                String[] data = input.split(",");
+                String caoNumber = data[0];
+                String dateOfBirth = data[1];
+                String password = data[2];
+                String email = data[3];
 
+                Student readInStudent = new Course( caoNumber, dateOfBirth, password, email);
+                this.studentList.add(readInStudent);
+            }
+        } catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void writeToStudentFile()
+    {
+        try(BufferedWriter studentFile = new BufferedWriter(new FileWriter("students.txt")))
+        {
+            for(Student student : studentList)
+            {
+                studentFile.write(student.getCaoNumber() + ", " + student.getDayOfBirth() + ", " + student.getPassword() + ", " + student.getEmail());
+            }
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
 //    isRegistered( caoNumber)
