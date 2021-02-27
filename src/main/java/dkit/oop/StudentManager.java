@@ -1,3 +1,5 @@
+//Sean Stephens D00211442
+
 package dkit.oop;
 // StudentManager encapsulates the storage and ability
 // to manipulate student objects
