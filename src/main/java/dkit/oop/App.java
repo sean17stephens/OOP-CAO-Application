@@ -83,6 +83,7 @@ public class App
 
             String input = sc.nextLine();
 
+
             try{
                 int inp = Integer.parseInt(input);
 
@@ -91,7 +92,9 @@ public class App
                         System.exit(0);
                         break;
                     case 1:
-                        StudentManager.getStudent();
+                        System.out.println("Please Enter a Cao Number: ");
+                        Integer caoNumber = sc.nextInt();
+                        StudentManager.getStudent("1234567");
                         break;
                     case 2:
                         menuUser();

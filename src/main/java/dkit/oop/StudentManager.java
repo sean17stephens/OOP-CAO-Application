@@ -23,13 +23,13 @@ public class StudentManager{
         studentsMap = new HashMap<>();
         // Hardcode some values to get started
         Student s1 = new Student(1234567,"20-04-20","abcdefg", "sean@sged.com");
-        studentsMap.put(1234567, s1);
+        studentsMap.put(1244967, s1);
         // later, load from text file "students.dat" and populate studentsMap
     }
 
-    public Student getStudent(Integer caonumber)
+    public Student getStudent(Integer caoNumber)
     {
-        Student s = studentsMap.get(caonumber);
+        Student s = studentsMap.get(caoNumber);
         if(s!=null)
             return new Student(s);
         else

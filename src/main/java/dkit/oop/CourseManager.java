@@ -27,7 +27,14 @@ public class CourseManager {
         courseMap = new HashMap<>();
         // Hardcode some values to get started
         Course c1 = new Course("DK321",7,"Bsc in Software Development", "Dundalk Institute of Technology");
+        Course c2 = new Course("SIT587",8,"Bsc in Accounting", "Sligo Institute of Technology");
+        Course c3 = new Course("CIT879",7,"Bsc in Building Surveying", "Carlow Institute of Technology");
+        Course c4 = new Course("DK546",8,"Bsc in Civil Engineering", "Dundalk Institute of Technology");
         courseMap.put("DK871", c1);
+        courseMap.put("SIT385", c2);
+        courseMap.put("CIT039", c3);
+        courseMap.put("DK231", c4);
+        loadCoursesFromFile();
         // Hardcode some values to get started
         // load from text file "courses.dat" and populate coursesMap
     }
@@ -69,7 +76,7 @@ public class CourseManager {
         writeToCourseFile();
     }
 
-    public Course removeCourse(Integer courseID)
+    public Course removeCourse(String courseID)
     {
         Course c = courseMap.get(courseID);
         if (c != null)

@@ -35,6 +35,7 @@ public class CourseChoicesManager {
     //
     HashMap<Integer,List<String>> selectedChoices = new HashMap<>();
     HashMap<Integer,List<String>> courseDetails = new HashMap<>();
+    HashMap<Integer,List<String>> studentDetails = new HashMap<>();
     HashMap<String,Course> courseMap = new HashMap<>();
 
     CourseChoicesManager(StudentManager studentManager, CourseManager courseManager) {
@@ -44,8 +45,9 @@ public class CourseChoicesManager {
         Student studentsMap = this.studentManager.getStudent(1234567);
     }
 
-//    public Student getStudentDetails() {
-//    }
+      public List<String> getStudentDetails(int caoNumber) {
+        return studentDetails.get(caoNumber);
+      }
 //
       public List<String> getCourseDetails(String courseID) {
         return courseDetails.get(courseID);
