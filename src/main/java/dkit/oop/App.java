@@ -80,7 +80,7 @@ public class App
                     case 1:
                         System.out.println("Please Enter a Cao Number: ");
                         Integer caoNumber = sc.nextInt();
-                        mgr.getStudentDetails(caoNumber);
+                        System.out.println(mgr.getStudentDetails(caoNumber));
                         break;
                     case 2:
                         System.out.println("Please Enter a Course ID: ");
@@ -99,11 +99,11 @@ public class App
                         break;
                     case 5:
                         System.out.println("All Courses");
-                        mgr.getAllCourses();
+                        mgr.printAllCourses();
                         break;
                     case 6:
                         System.out.println("All Students");
-                        //mgr.getAllStudents();
+                        mgr.printAllStudents();
                         break;
                     default:
                         System.out.println("Not a valid option");

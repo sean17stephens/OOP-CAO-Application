@@ -48,7 +48,7 @@ public class CourseChoicesManager {
     }
 
       public List<String> getStudentDetails(int caoNumber) {
-        return studentDetails.get(caoNumber);
+          return studentDetails.get(caoNumber);
       }
 //
       public List<String> getCourseDetails(String courseID) {
@@ -81,6 +81,22 @@ public class CourseChoicesManager {
             courseListCopy.add(new Course(c));
         }
         return courseListCopy;
+    }
+
+    public void printAllCourses()
+    {
+        for(Map.Entry c : courseMap.entrySet())
+        {
+            System.out.println(c.getValue());
+        }
+    }
+
+    public void printAllStudents()
+    {
+        for(Map.Entry s : studentsMap.entrySet())
+        {
+            System.out.println(s.getValue());
+        }
     }
 
     /*public List<Student> getAllStudents()

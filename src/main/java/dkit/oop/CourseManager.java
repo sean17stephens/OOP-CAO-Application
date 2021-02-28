@@ -34,7 +34,7 @@ public class CourseManager {
         courseMap.put("SIT385", c2);
         courseMap.put("CIT039", c3);
         courseMap.put("DK231", c4);
-        loadCoursesFromFile();
+        //loadCoursesFromFile();
         // Hardcode some values to get started
         // load from text file "courses.dat" and populate coursesMap
     }
@@ -84,6 +84,14 @@ public class CourseManager {
         else
             return null;
         return c;
+    }
+
+    public void printAllCourses()
+    {
+        for(Map.Entry c : courseMap.entrySet())
+        {
+            System.out.println(c.getValue());
+        }
     }
 
     public void loadCoursesFromFile()

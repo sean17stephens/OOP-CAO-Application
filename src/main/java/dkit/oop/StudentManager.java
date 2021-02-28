@@ -25,7 +25,7 @@ public class StudentManager{
         Student s3 = new Student(2905836,"15-06-00","password", "paddy@outlook.com");
         Student s4 = new Student(8754629,"26-01-01","letmein", "ryan@yahoo.com");
         studentsMap.put(1244967, s1);
-        loadStudentsFromFile();
+        //loadStudentsFromFile();
         // later, load from text file "students.dat" and populate studentsMap
     }
 
@@ -73,6 +73,14 @@ public class StudentManager{
         else
             return null;
         return s;
+    }
+
+    public void printAllStudents()
+    {
+        for(Map.Entry s : studentsMap.entrySet())
+        {
+            System.out.println(s.getValue());
+        }
     }
 
     public void loadStudentsFromFile()
