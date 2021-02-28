@@ -58,7 +58,7 @@ public class StudentManager{
 
     public void loadStudentsFromFile()
     {
-        try(Scanner studentFile = new Scanner(new BufferedReader(new FileReader("students.txt"))))
+        try(Scanner studentFile = new Scanner(new BufferedReader(new FileReader("students.dat"))))
         {
             String input;
             while(studentFile.hasNextLine())
@@ -80,7 +80,7 @@ public class StudentManager{
 
     public void writeToStudentFile()
     {
-        try(BufferedWriter studentFile = new BufferedWriter(new FileWriter("students.txt")))
+        try(BufferedWriter studentFile = new BufferedWriter(new FileWriter("students.dat")))
         {
             for(Student student : studentList)
             {

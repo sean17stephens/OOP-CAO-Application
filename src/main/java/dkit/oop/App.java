@@ -49,37 +49,21 @@ public class App
         //get the students current choices
         List<String> currentChoicesList = mgr.getStudentChoices(1234567);
         //display the students choice. iterate over currentChoicesList
-        // mgr.getCourseDetails();
+         mgr.getCourseDetails("DK321");
+         mgr.getStudentChoices(1234567);
+         mgr.getStudentDetails(1234567);
 
 
 
         // display a menu to do things
         // manual testing of mgr public interface
-
-        menu();
-
-
-//        if ( mgr.login(22224444, "xxxx","bbbb") )
-//        {
-//            Student student = mgr.getStudentDetails(22224444);
-//
-//            System.out.println("Student: " + student);
-//        }
-//        else
-//            System.out.println("Not logged in - try again");
-
-
-        //mgr.saveToFile();
-
-    }
-
-    public static void menu(){
-
         while(true){
             //show options
             System.out.println("0. Exit");
             System.out.println("1. Get a Student Using Cao Number");
-            System.out.println("2. User");
+            System.out.println("2. Get a Course Using the course ID");
+            System.out.println("3. Get a Students Choices using their Cao Number");
+            System.out.println("4. Update a Students Choices");
 
             String input = sc.nextLine();
 
@@ -94,10 +78,22 @@ public class App
                     case 1:
                         System.out.println("Please Enter a Cao Number: ");
                         Integer caoNumber = sc.nextInt();
-                        StudentManager.getStudent("1234567");
+                        mgr.getStudentDetails(caoNumber);
                         break;
                     case 2:
-                        menuUser();
+                        System.out.println("Please Enter a Course ID: ");
+                        String courseID = sc.nextLine();
+                        mgr.getCourseDetails(courseID);
+                        break;
+                    case 3:
+                        System.out.println("Please Enter a Cao Number: ");
+                        Integer caoNumber2 = sc.nextInt();
+                        mgr.getStudentChoices(caoNumber2);
+                        break;
+                    case 4:
+                        System.out.println("Please Enter a Cao Number: ");
+                        Integer caoNumber3 = sc.nextInt();
+                        //mgr.updateChoices(caoNumber3,"DK821");
                         break;
                     default:
                         System.out.println("Not a valid option");
@@ -112,6 +108,25 @@ public class App
             }
         }
 
+
+
+
+
+
+        //menu();
+
+
+//        if ( mgr.login(22224444, "xxxx","bbbb") )
+//        {
+//            Student student = mgr.getStudentDetails(22224444);
+//
+//            System.out.println("Student: " + student);
+//        }
+//        else
+//            System.out.println("Not logged in - try again");
+
+
+        //mgr.saveToFile();
 
     }
 }

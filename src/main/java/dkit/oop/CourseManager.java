@@ -88,7 +88,7 @@ public class CourseManager {
 
     public void loadCoursesFromFile()
     {
-        try(Scanner courseFile = new Scanner(new BufferedReader(new FileReader("courses.txt"))))
+        try(Scanner courseFile = new Scanner(new BufferedReader(new FileReader("courses.dat"))))
         {
             String input;
             while(courseFile.hasNextLine())
@@ -110,7 +110,7 @@ public class CourseManager {
 
     public void writeToCourseFile()
     {
-        try(BufferedWriter courseFile = new BufferedWriter(new FileWriter("courses.txt")))
+        try(BufferedWriter courseFile = new BufferedWriter(new FileWriter("courses.dat")))
         {
             for(Course course : courseList)
             {
