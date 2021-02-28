@@ -50,5 +50,9 @@ public class AppTest
         assert(!c1.equals(c5));
     }
 
+    public void testWriteCoursesFile ()
+    {
+
+    }
 
 }
