@@ -78,7 +78,7 @@ public class App
         while(true){
             //show options
             System.out.println("0. Exit");
-            System.out.println("1. Get a Student Using Cao Numnber");
+            System.out.println("1. Get a Student Using Cao Number");
             System.out.println("2. User");
 
             String input = sc.nextLine();

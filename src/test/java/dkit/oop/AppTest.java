@@ -1,3 +1,5 @@
+//Sean Stephens D00211442
+
 package dkit.oop;
 
 import static org.junit.Assert.assertTrue;
@@ -31,6 +33,20 @@ public class AppTest
         s2.setCaoNumber(6475838);
 
         assert(!s1.equals(s2));
+    }
 
+    public void testCourseClone ()
+    {
+        Course c1 = new Course("DK321",7,"Bsc in Software Development", "Dundalk Institute of Technology");
+
+        Course c5 = new Course(c1);
+
+        assert (c1 != c5);
+
+        assert(!c1.equals(c5));
+
+        c5.setInstitution("Carlow Institute of Technology");
+
+        assert(!c1.equals(c5));
     }
 }

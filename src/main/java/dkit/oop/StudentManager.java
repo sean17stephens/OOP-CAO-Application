@@ -23,6 +23,9 @@ public class StudentManager{
         studentsMap = new HashMap<>();
         // Hardcode some values to get started
         Student s1 = new Student(1234567,"20-04-20","abcdefg", "sean@sged.com");
+        Student s2 = new Student(6849204,"10-02-02","123456789", "eugene@gmail.com");
+        Student s3 = new Student(2905836,"15-06-00","password", "paddy@outlook.com");
+        Student s4 = new Student(8754629,"26-01-01","letmein", "ryan@yahoo.com");
         studentsMap.put(1244967, s1);
         // later, load from text file "students.dat" and populate studentsMap
     }
