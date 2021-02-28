@@ -64,6 +64,8 @@ public class App
             System.out.println("2. Get a Course Using the course ID");
             System.out.println("3. Get a Students Choices using their Cao Number");
             System.out.println("4. Update a Students Choices");
+            System.out.println("5. View all Courses");
+            System.out.println("6. View all Students");
 
             String input = sc.nextLine();
 
@@ -94,6 +96,14 @@ public class App
                         System.out.println("Please Enter a Cao Number: ");
                         Integer caoNumber3 = sc.nextInt();
                         //mgr.updateChoices(caoNumber3,"DK821");
+                        break;
+                    case 5:
+                        System.out.println("All Courses");
+                        mgr.getAllCourses();
+                        break;
+                    case 6:
+                        System.out.println("All Students");
+                        //mgr.getAllStudents();
                         break;
                     default:
                         System.out.println("Not a valid option");

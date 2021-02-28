@@ -50,7 +50,22 @@ public class AppTest
         assert(!c1.equals(c5));
     }
 
+    public void testLoadCoursesFile ()
+    {
+
+    }
+
+    public void testLoadStudentsFile ()
+    {
+
+    }
+
     public void testWriteCoursesFile ()
+    {
+
+    }
+
+    public void testWriteStudentsFile ()
     {
 
     }

@@ -37,11 +37,13 @@ public class CourseChoicesManager {
     HashMap<Integer,List<String>> courseDetails = new HashMap<>();
     HashMap<Integer,List<String>> studentDetails = new HashMap<>();
     HashMap<String,Course> courseMap = new HashMap<>();
+    HashMap<Integer,Course> studentsMap = new HashMap<>();
 
     CourseChoicesManager(StudentManager studentManager, CourseManager courseManager) {
         this.studentManager = studentManager;
         this.courseManager = courseManager;
         List<Course> courseList = this.courseManager.getAllCourses();
+        List<Student> studentList = this.studentManager.getAllStudents();
         Student studentsMap = this.studentManager.getStudent(1234567);
     }
 
@@ -80,6 +82,26 @@ public class CourseChoicesManager {
         }
         return courseListCopy;
     }
+
+    /*public List<Student> getAllStudents()
+    {
+        List<Student> studentListCopy = new ArrayList<>();
+
+        //studentsMap.entrySet();
+        for (Map.Entry<Integer, Student> entry : studentsMap.entrySet())
+        {
+            Student s = entry.getValue(); // get the car from the entry set
+            studentListCopy.add(new Student(s));
+        }
+
+        Set<Integer> keySet = studentsMap.keySet();
+        for (Integer caoNumber: keySet)
+        {
+            Student s = studentManager.getStudent(caoNumber);
+            studentListCopy.add(new Student(s));
+        }
+        return studentListCopy;
+    }*/
 //
 //    boolean login() {
 //    }

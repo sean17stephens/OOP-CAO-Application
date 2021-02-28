@@ -7,10 +7,8 @@ package dkit.oop;
 
 import java.awt.*;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
+import java.util.List;
 
 public class StudentManager{
 
@@ -27,6 +25,7 @@ public class StudentManager{
         Student s3 = new Student(2905836,"15-06-00","password", "paddy@outlook.com");
         Student s4 = new Student(8754629,"26-01-01","letmein", "ryan@yahoo.com");
         studentsMap.put(1244967, s1);
+        loadStudentsFromFile();
         // later, load from text file "students.dat" and populate studentsMap
     }
 
@@ -37,6 +36,26 @@ public class StudentManager{
             return new Student(s);
         else
             return null;
+    }
+
+    public List<Student> getAllStudents()
+    {
+        List<Student> studentListCopy = new ArrayList<>();
+
+        //carMap.entrySet();
+        for (Map.Entry<Integer, Student> entry : studentsMap.entrySet())
+        {
+            Student s = entry.getValue(); // get the car from the entry set
+            studentListCopy.add(new Student(s));
+        }
+
+        Set<Integer> keySet = studentsMap.keySet();
+        for (Integer caoNumber: keySet)
+        {
+            Student s = studentsMap.get(caoNumber);
+            studentListCopy.add(new Student(s));
+        }
+        return studentList;
     }
 
     public void addStudent(Student student)
